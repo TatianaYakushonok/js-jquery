@@ -37,6 +37,17 @@ modalClose.on('click', function () {
   $('.modal-order').hide(500);
 });
 
+$(document).on('click', function (e) {
+  e.preventDefault();
+  if (
+    !$('.modal-order__wrapper').is(e.target) &&
+    !modalBtn.is(e.target) &&
+    $('.modal-order__wrapper').has(e.target).length === 0
+  ) {
+    $('.modal-order').hide(500);
+  }
+});
+
 const modalOrderInput = $('.modal-order__input');
 const modalOrderTitle = $('.modal-order__title');
 
