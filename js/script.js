@@ -142,17 +142,19 @@ const openMenu = () => {
 };
 
 const closeMenu = () => {
-  nav.animate(
-    {
-      left: -400,
-    },
-    500,
-  );
-  $(this).animate(
+  btnClose.animate(
     {
       opacity: 0,
     },
     300,
+    function () {
+      nav.animate(
+        {
+          left: -400,
+        },
+        500,
+      );
+    },
   );
 };
 
